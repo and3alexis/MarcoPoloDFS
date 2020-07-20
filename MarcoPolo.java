@@ -1,5 +1,3 @@
-package lab;
-
 public class MarcoPolo {
 	
 	private int[][] graph;
