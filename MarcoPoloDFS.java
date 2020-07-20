@@ -1,4 +1,4 @@
-public class MarcoPoloDFS {
+public class MarcoPolo {
 	
 	private int[][] graph;
 	
@@ -37,13 +37,13 @@ public class MarcoPoloDFS {
     	boolean [][] visited = new boolean[this.rows][this.columns];
     	
     	for (int row = 0; row < this.rows; row++) {
-				for (int column = 0; column < this.columns; column++) {
-					if(graph[row][column] == 1 && !visited[row][column]) {
-						countIslands++;
-						dfs(row, column, visited);
-					}
+			for (int column = 0; column < this.columns; column++) {
+				if(graph[row][column] == 1 && !visited[row][column]) {
+					countIslands++;
+					dfs(row, column, visited);
 				}
 			}
+		}
     	return countIslands;
     }
     
@@ -55,20 +55,20 @@ public class MarcoPoloDFS {
     	visited[row][column] = true;
     	
     	for (int dr = 0; dr < DIRECTIONS.length; dr++) {
-				dfs(row + DIRECTIONS[dr][0], column + DIRECTIONS[dr][1], visited);
-			}
+			dfs(row + DIRECTIONS[dr][0], column + DIRECTIONS[dr][1], visited);
+		}
     }
     
     
     public static void main(String[] args) {
-      int[][] map = new int[][] {	{ 1, 1, 0, 0, 0 },
-                                  { 1, 1, 0, 0, 0 },
-                                  { 0, 0, 1, 1, 1 }};
+		int[][] map = new int[][] {	{ 1, 1, 0, 0, 0 },
+									{ 1, 1, 0, 0, 0 },
+									{ 0, 0, 1, 1, 1 }};
 			
 			
-			MarcoPolo marco = new MarcoPolo(map);
+    	MarcoPolo marco = new MarcoPolo(map);
 		
-		  System.out.println(marco.getCountIslands());
+		System.out.println(marco.getCountIslands());
 		
 	}
 
